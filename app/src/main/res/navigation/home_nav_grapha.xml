@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_nav_grapha"
+    app:startDestination="@id/weatherScreen">
+
+    <fragment
+        android:id="@+id/weatherScreen"
+        android:name="com.example.weatherapp.presentation.features.weather.WeatherScreen"
+        android:label="weatherScreen" >
+        <action
+            android:id="@+id/action_weatherScreen_to_forecastScreen"
+            app:destination="@id/forecastScreen" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/forecastScreen"
+        android:name="com.example.weatherapp.presentation.features.forecast.ForecastScreen"
+        android:label="forecastScreen">
+        <argument
+            android:name="forecast"
+            app:argType="com.example.weatherapp.data.model.Forecast" />
+    </fragment>
+</navigation>
